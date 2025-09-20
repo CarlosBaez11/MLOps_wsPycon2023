@@ -13,4 +13,12 @@ En las siguientes imágenes se encuentran evidencias de la ejecución del proyec
 
 <img width="1847" height="973" alt="image" src="https://github.com/user-attachments/assets/1794c507-237a-4449-9932-dc32a385f393" />
 
+4. Evidencias de ejecución de los Pipelines:
+
+En las siguientes imágenes se encuantra la evidencia de los Pipelines, en algunos la Build falló debido a que se estaban realizando prouebas, sin embargo, los problemas fueron resuletos y se pudo entrenar el modelo.
+
+<img width="1456" height="784" alt="image" src="https://github.com/user-attachments/assets/55970be1-a998-4420-9bf4-15dcb17a9bfe" />
+<img width="1470" height="517" alt="image" src="https://github.com/user-attachments/assets/a6f172cb-39d1-4b4d-b64b-6a07253b3fdb" />
+
+
 
