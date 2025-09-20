@@ -198,9 +198,9 @@ def evaluate_and_log(experiment_id='99',config=None,):
 
         test_loader = torch.utils.data.DataLoader(testing_set, batch_size=128, shuffle=False)
 
-        model_artifact = run.use_artifact("trained-fashion-mnist-model")
+        model_artifact = run.use_artifact(""trained-model:latest")
         model_dir = model_artifact.download()
-        model_path = os.path.join(model_dir, "trained_fashion_mnist_model.pth")
+        model_path = os.path.join(model_dir, "trained_model.pth")
         model_config = model_artifact.metadata
 
         model = Classifier(**model_config)
