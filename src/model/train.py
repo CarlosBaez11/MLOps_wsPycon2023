@@ -191,16 +191,16 @@ def train_and_log(config,experiment_id='99'):
     
 def evaluate_and_log(experiment_id='99',config=None,):
     
-    with wandb.init(project="MLOps-Pycon2023", name=f"Eval Model ExecId-{args.IdExecution} ExperimentId-{experiment_id}", job_type="eval-model", config=config) as run:
+    with wandb.init(project="Class_Assignment", name=f"Eval Model ExecId-{args.IdExecution} ExperimentId-{experiment_id}", job_type="eval-model", config=config) as run:
         data = run.use_artifact('mnist-preprocess:latest')
         data_dir = data.download()
         testing_set = read(data_dir, "test")
 
         test_loader = torch.utils.data.DataLoader(testing_set, batch_size=128, shuffle=False)
 
-        model_artifact = run.use_artifact("trained-model:latest")
+        model_artifact = run.use_artifact("trained-fashion-mnist-model")
         model_dir = model_artifact.download()
-        model_path = os.path.join(model_dir, "trained_model.pth")
+        model_path = os.path.join(model_dir, "trained_fashion_mnist_model.pth")
         model_config = model_artifact.metadata
 
         model = Classifier(**model_config)
