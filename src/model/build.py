@@ -21,12 +21,11 @@ if not os.path.exists("./model"):
     # If it doesn't exist, create it
     os.makedirs("./model")
 
-# Data parameters testing
 num_classes = 10
-input_shape = 784
+input_shape = 28 * 28
 
 def build_model_and_log(config, model, model_name="MLP", model_description="Simple MLP"):
-    with wandb.init(project="MLOps-Pycon2023", 
+    with wandb.init(project="Class_Assignment", 
         name=f"initialize Model ExecId-{args.IdExecution}", 
         job_type="initialize-model", config=config) as run:
         config = wandb.config
@@ -56,4 +55,4 @@ model_config = {"input_shape":input_shape,
 
 model = Classifier(**model_config)
 
-build_model_and_log(model_config, model, "linear","Simple Linear Classifier")
+build_model_and_log(model_config, model, "linear", "Simple Linear Classifier for Fashion-MNIST")
