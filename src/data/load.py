@@ -19,8 +19,8 @@ def load(train_size=.8):
     """
       
     # the data, split between train and test sets
-    train = torchvision.datasets.MNIST(root='./data', train=True, download=True)
-    test = torchvision.datasets.MNIST(root='./data', train=False, download=True)
+    train = torchvision.datasets.FashionMNIST(root='./data', train=True, download=True)
+    test = torchvision.datasets.FashionMNIST(root='./data', train=False, download=True)
 
     (x_train, y_train), (x_test, y_test) = (train.data, train.targets), (test.data, test.targets)
 
@@ -37,7 +37,7 @@ def load(train_size=.8):
 def load_and_log():
     # 🚀 start a run, with a type to label it and a project it can call home
     with wandb.init(
-        project="MLOps-Pycon2023",
+        project="Class_Assignment",
         name=f"Load Raw Data ExecId-{args.IdExecution}", job_type="load-data") as run:
         
         datasets = load()  # separate code for loading the datasets
@@ -46,7 +46,7 @@ def load_and_log():
         # 🏺 create our Artifact
         raw_data = wandb.Artifact(
             "mnist-raw", type="dataset",
-            description="raw MNIST dataset, split into train/val/test",
+            description="raw Fashion MNIST dataset, split into train/val/test",
             metadata={"source": "torchvision.datasets.MNIST",
                       "sizes": [len(dataset) for dataset in datasets]})
 
