@@ -1,11 +1,10 @@
 import torch
 import torchvision
 from torch.utils.data import TensorDataset
-# Testing
 import argparse
 import wandb
 
-#Test commit
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--IdExecution', type=str, help='ID of the execution')
 args = parser.parse_args()
